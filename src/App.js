@@ -17,9 +17,9 @@ class App extends Component {
       key: '19L3cd-GVp4NcKdpEK_jgPSlvpLeROtv-VDRGERiHEGg',
       callback: googleData => {
         // console.log('google sheet data --->', googleData);
-        this.setState(prevState=>({
+        this.setState(prevState => ({
           ...prevState,
-          data:googleData
+          data: googleData
         }));
       },
       simpleSheet: true
@@ -48,43 +48,43 @@ class App extends Component {
         <table id="employee-details">
           <tr>
             <th>
-            0.12 Patch
+              0.12 Patch
             </th>
             <th>
-            Weight (KG)
+              Weight (KG)
             </th>
             <th>
-            Rub price
+              Rub price
             </th>
             <th>
-            Damage
+              Damage
             </th>
             <th>
-            Accuracy (%)
+              Accuracy (%)
             </th>
             <th>
-            Recoil (%)
+              Recoil (%)
             </th>
             <th>
-            Penetration Value
+              Penetration Value
             </th>
             <th>
-            Projectile Count
+              Projectile Count
             </th>
             <th>
-            Projectile Speed (m/s)
+              Projectile Speed (m/s)
             </th>
             <th>
-            Penetration Chance
+              Penetration Chance
             </th>
             <th>
-            Ricochet Chance
+              Ricochet Chance
             </th>
             <th>
-            Fragmentation Chance
+              Fragmentation Chance
             </th>
             <th>
-            Armor Damage (%)
+              Armor Damage (%)
             </th>
           </tr>
           {

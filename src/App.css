@@ -23,7 +23,15 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.App {
+  background-color: #282c34;
+}
+th{
+  color:#61dafb; 
+}
+td{
+  color: darkgray;
+}
 .App-link {
   color: #61dafb;
 }
