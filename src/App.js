@@ -8,16 +8,27 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      data: []
+      data: [],
+      compare: []
     }
+  }
+  insertCompare = (id) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      compare: {
+        ...prevState.compare.push(prevState.data.filter((cho) => cho['0.12 Patch'] === id))
+      }
+    }));
+    this.insertCompare = this.insertCompare.bind(this);
+    console.log(this.state.compare);
   }
 
   componentDidMount() {
     Tabletop.init({
       key: '19L3cd-GVp4NcKdpEK_jgPSlvpLeROtv-VDRGERiHEGg',
-      callback: googleData => {
+      callback: (googleData) => {
         // console.log('google sheet data --->', googleData);
-        this.setState(prevState => ({
+        this.setState((prevState) => ({
           ...prevState,
           data: googleData
         }));
@@ -28,7 +39,7 @@ class App extends Component {
 
   render() {
     // const { data } = this.state
-    console.log(this.state.data);
+    // console.log(this.state.data);
     return (
       <div className="App">
         <header className="App-header">
@@ -88,7 +99,7 @@ class App extends Component {
             </th>
           </tr>
           {
-            this.state.data.map(obj => {
+            this.state.data.map((obj) => {
               return (
                 <tr key={obj['0.12 Patch']}>
                   <td>{obj['0.12 Patch']}</td>
@@ -110,6 +121,11 @@ class App extends Component {
           }
         </table>
       </div>
+    );
+    return (
+      <tr onClick={this.insertCompare(['0.12 Patch'])}>
+        {this.state.insertCompare}
+      </tr>
     );
   }
 }
