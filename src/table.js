@@ -9,12 +9,21 @@ class Table extends Component {
       this.insertCompare = this.insertCompare.bind(this);
    }
    insertCompare = (id) => {
-      this.setState((prevState) => ({
+      if (this.state.compare.filter((cho) => cho['0.12 Patch'] === id).length===0){
+         this.setState((prevState) => ({
 
-         compare: [
-            ...prevState.compare,
-            this.props.data.filter((cho) => cho['0.12 Patch'] === id)[0]
-         ]
+            compare: [
+               ...prevState.compare,
+               this.props.data.filter((cho) => cho['0.12 Patch'] === id)[0]
+            ]
+         }));
+      }
+      
+      console.log(this.state.compare);
+   }
+   removeCompare = (id) => {
+      this.setState((prevState) => ({
+         compare: this.state.compare.filter((cho) => cho['0.12 Patch'] !== id)
       }));
       console.log(this.state.compare);
    }
@@ -49,7 +58,7 @@ class Table extends Component {
                         this.state.compare.map((obj) => {
                            console.log(this.state.compare);
                            return (
-                              <tr key={obj['0.12 Patch']}  >
+                              <tr key={obj['0.12 Patch']} onClick={() => this.removeCompare(obj['0.12 Patch'])}>
                                  <td>{obj['0.12 Patch']}</td>
                                  <td>{obj['Weight (KG)']}</td>
                                  <td>{obj['Rub price']}</td>
@@ -89,7 +98,7 @@ class Table extends Component {
                   {
                      this.props.data.map((obj) => {
                         return (
-                           <tr key={obj['0.12 Patch']} onClick={(e) => this.insertCompare(obj['0.12 Patch'], e)}>
+                           <tr key={obj['0.12 Patch']} onClick={() => this.insertCompare(obj['0.12 Patch'])}>
                               <td>{obj['0.12 Patch']}</td>
                               <td>{obj['Weight (KG)']}</td>
                               <td>{obj['Rub price']}</td>
