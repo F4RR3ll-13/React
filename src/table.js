@@ -31,51 +31,25 @@ class Table extends Component {
                <table id="employee-details_2">
                   <tbody>
                      <tr>
-                        <th>
-                           0.12 Patch
-            </th>
-                        <th>
-                           Weight (KG)
-            </th>
-                        <th>
-                           Rub price
-            </th>
-                        <th>
-                           Damage
-            </th>
-                        <th>
-                           Accuracy (%)
-            </th>
-                        <th>
-                           Recoil (%)
-            </th>
-                        <th>
-                           Penetration Value
-            </th>
-                        <th>
-                           Projectile Count
-            </th>
-                        <th>
-                           Projectile Speed (m/s)
-            </th>
-                        <th>
-                           Penetration Chance
-            </th>
-                        <th>
-                           Ricochet Chance
-            </th>
-                        <th>
-                           Fragmentation Chance
-            </th>
-                        <th>
-                           Armor Damage (%)
-            </th>
+                        <th>0.12 Patch</th>
+                        <th>Weight (KG)</th>
+                        <th>Rub price</th>
+                        <th>Damage</th>
+                        <th>Accuracy (%)</th>
+                        <th>Recoil (%)</th>
+                        <th>Penetration Value</th>
+                        <th>Projectile Count</th>
+                        <th>Projectile Speed (m/s)</th>
+                        <th>Penetration Chance</th>
+                        <th>Ricochet Chance</th>
+                        <th>Fragmentation Chance</th>
+                        <th>Armor Damage (%)</th>
                      </tr>
                      {
                         this.state.compare.map((obj) => {
                            console.log(this.state.compare);
                            return (
-                              <tr key={obj['0.12 Patch']} >
+                              <tr key={obj['0.12 Patch']}  >
                                  <td>{obj['0.12 Patch']}</td>
                                  <td>{obj['Weight (KG)']}</td>
                                  <td>{obj['Rub price']}</td>
@@ -98,45 +72,19 @@ class Table extends Component {
             <table id="employee-details">
                <tbody>
                   <tr>
-                     <th>
-                        0.12 Patch
-            </th>
-                     <th>
-                        Weight (KG)
-            </th>
-                     <th>
-                        Rub price
-            </th>
-                     <th>
-                        Damage
-            </th>
-                     <th>
-                        Accuracy (%)
-            </th>
-                     <th>
-                        Recoil (%)
-            </th>
-                     <th>
-                        Penetration Value
-            </th>
-                     <th>
-                        Projectile Count
-            </th>
-                     <th>
-                        Projectile Speed (m/s)
-            </th>
-                     <th>
-                        Penetration Chance
-            </th>
-                     <th>
-                        Ricochet Chance
-            </th>
-                     <th>
-                        Fragmentation Chance
-            </th>
-                     <th>
-                        Armor Damage (%)
-            </th>
+                     <th>0.12 Patch</th>
+                     <th>Weight (KG)</th>
+                     <th>Rub price</th>
+                     <th>Damage</th>
+                     <th>Accuracy (%)</th>
+                     <th>Recoil (%)</th>
+                     <th>Penetration Value</th>
+                     <th>Projectile Count</th>
+                     <th>Projectile Speed (m/s)</th>
+                     <th>Penetration Chance</th>
+                     <th>Ricochet Chance</th>
+                     <th>Fragmentation Chance</th>
+                     <th>Armor Damage (%)</th>
                   </tr>
                   {
                      this.props.data.map((obj) => {
